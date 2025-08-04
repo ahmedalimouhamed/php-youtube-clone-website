@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+
+        body{
+            background-color: #f9f9f9;
+        }
+
+        .sidebar{
+            height: 100vh;
+            position: fixed;
+            width: 240px;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            border-right: 1px solid #ddd;
+            padding-top: 60px;
+        }
+
+        .sidebar a{
+            display: block;
+            padding: 15px 20px;
+            color: #333;        
+            text-decoration:none;
+        }
+
+        .sidebar a:is(:hover, .active){
+            background-color: #f1f1f1;
+            font-weight: bold;
+        }
+
+        .main-content{
+            margin-left: 240px;
+            padding: 30px;
+        }
+
+        .navbar-brand i{
+            color: red;
+            margin-right: 8px;
+        }
+
+        .top-nav{
+            position: fixed;
+            width: 100%;
+            z-index: 999;
+        }
+
+        .video-container{
+            background-color: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .query-select{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+        }
+
+        .video-title{
+            font-size: 1.8rem;
+        }
+
+        .btn-action{
+            margin-right: 10px;
+        }
+
+        .comment-reply{
+            margin-left: 30px;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm top-nav">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <i class="fas fa-play-circle"></i> <strong>YoutubeClone</strong>
+            </a>
+
+            <span class="ms-auto me-3">Welcome, <strong>Chama</strong></span>
+
+            <a href="" class="btn btn-sm btn-outline-danger me-3">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+
+            
+        </div>
+    </nav>
+
+    <div class="sidebar">
+        <a href=""><i class="fas fa-home me-2"></i>Dashboard</a>
+        <a href=""><i class="fas fa-upload me-2"></i>Upload Video</a>
+        <a href=""><i class="fas fa-film me-2"></i>My Videos</a>
+        <a href=""><i class="fas fa-chart-bar me-2"></i>Analytics</a>
+        <a href=""><i class="fas fa-user me-2"></i>Profile</a>
+        <a href=""><i class="fas fa-cog me-2"></i>Settings</a>
+    </div>
+
+    <div class="main-content">
+        <div class="row g-4 mt-4">
+            <div class="col-lg-8">
+                <div class="video-container mb-3">
+                    <select name="" id="" class="form-select form-select-sm quality-select" style="width: 120px;">
+                        <option>1080p</option>
+                        <option selected>720p</option>
+                        <option>480p</option>
+                        <option>360p</option>
+                        <option>240p</option>
+                        <option>144p</option>
+                    </select>
+
+                    <video class="w-100" height="450" controls>
+                        <source src="sample-video-720p.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div>
+
+                <h2 class="video-title">Exploring the wild Mountains of africa</h2>
+
+                <div class="d-flex align-items-center mb-3">
+                    <small class="text-muted me-3">
+                        <i class="fas fa-callendar-alt me-1"></i> Uploaded: March 25, 2025
+                    </small>
+
+                    <small class="text-muted me-3">
+                        <i class="fas fa-eye me-1"></i> Views: 12,345
+                    </small>
+
+                    <small class="text-muted me-3">
+                        <i class="fas fa-clock me-1"></i> Watch Time: 120 hrs
+                    </small>
+                </div>
+
+                <div class="mb-4 d-flex align-items-center">
+                    <a href="" class="btn btn-sm btn-primary btn-action">
+                        <i class="fas fa-edit me-1"></i>Edit Video
+                    </a>
+
+                    <a href="" class="btn btn-sm btn-outline-danger btn-action">
+                        <i class="fas fa-trash me-1"></i>Delete Video
+                    </a>
+                </div>
+
+                <div class="ms-auto">
+                    <button class="btn btn-outline-success btn-sm me-2">
+                        <i class="fas fa-thumbs-up me-1"></i> Like(120)
+                    </button>
+
+                    <button class="btn btn-outline-danger btn-sm me-2">
+                        <i class="fas fa-thumbs-down me-1"></i> Dislike(12)
+                    </button>
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5>Description</h5>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptate facilis debitis, sequi repellendus distinctio beatae eligendi quia doloribus veniam quam autem doloremque temporibus molestiae illum esse tenetur quis natus, laudantium, labore tempora! Explicabo voluptatem, pariatur maxime delectus minus voluptas.</p>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h5><i class="fas fa-comments me-2 text-primary"></i>Comments</h5>
+
+                    <div class="mb-3">
+                        <strong>Jane Doe</strong>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    
+                        <div class="comment-reply">
+                            <strong>John Doe</strong>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                        </div>
+                    
+                        <hr>
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Jane Doe</strong>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    
+                        <div class="comment-reply">
+                            <strong>John Doe</strong>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                        </div>
+                    
+                        <hr>
+                    </div>
+
+                    <form action="" class="mb-3">
+                        <textarea name="" id="" class="form-control" rows="3" placeholder="Leave a comment"></textarea>
+
+                        <button class="btn btn-sm btn-primary mt-2">
+                            <i class="fas fa-paper-plane me-1"></i>Post Comment
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <h5 class="mb-3">Related Videos</h5>
+
+            <div class="list-group">
+                <a href="" class="list-group-item list-group-item-action">
+                    <i class="fas fa-play-circla me-2"></i> Hiking in the mountains
+                </a>
+
+                <a href="" class="list-group-item list-group-item-action">
+                    <i class="fas fa-play-circla me-2"></i> Hiking in the mountains
+                </a>
+
+                <a href="" class="list-group-item list-group-item-action">
+                    <i class="fas fa-play-circla me-2"></i> Hiking in the mountains
+                </a>
+            </div>
+        </div>
+        
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
